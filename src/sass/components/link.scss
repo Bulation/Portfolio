@@ -1,0 +1,10 @@
+.link {
+  color: $light-color;
+  text-decoration: none;
+  -webkit-transition: color 0.3s ease-in;
+  -o-transition: color 0.3s ease-in;
+  transition: color 0.3s ease-in;
+  &:hover {
+    color: $main-color;
+  }
+}
