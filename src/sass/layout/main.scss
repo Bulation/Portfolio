@@ -1,0 +1,18 @@
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 100px 20px 0;
+  color: $light-color;
+  -webkit-transition: background-color 0.3s ease-in;
+       -o-transition: background-color 0.3s ease-in;
+          transition: background-color 0.3s ease-in;
+  -webkit-transition: color 0.3s ease-in;
+       -o-transition: color 0.3s ease-in;
+          transition: color 0.3s ease-in;
+  @media screen and (max-width: 768px) {
+    padding: 80px 64px 0 60px;
+  }
+}
+.main {
+  background-color: $dark-color;
+}
