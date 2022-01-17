@@ -1,0 +1,72 @@
+.footer {
+  background-color: $dark-color;
+  &__copyrights {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    gap: 20px;
+  }
+  &__link {
+    @media screen and (min-width: 769px) {
+      margin-left: 20px;
+    }
+  }
+}
+.footer-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font: 400 20px/50px Inter-Regular, sans-serif;
+  padding: 50px 20px;
+  @media screen and (max-width: 768px) {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    line-height: 24px;
+    gap: 20px;
+    padding: 28px 0;
+  }
+}
+.footer-socials {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style-type: none;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 9px 0;
+  gap: 20px;
+  &__item {
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    background-color: $light-color;
+    -webkit-transition: background-color 0.3s ease-in;
+         -o-transition: background-color 0.3s ease-in;
+            transition: background-color 0.3s ease-in;
+    &:hover {
+      background-color: $main-color;
+    }
+  }
+}
+@each $social in twitter, facebook, pinterest, instagram {
+  .footer-socials__item_#{$social} {
+    -webkit-mask: url(../assets/svg/#{$social}.svg);
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+            mask: url(../assets/svg/#{$social}.svg);
+            mask-repeat: no-repeat;
+            mask-position: center;
+  }
+}
