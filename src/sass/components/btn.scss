@@ -1,0 +1,14 @@
+.btn {
+  width: 220px;
+  padding: 7px 0;
+  background-color: $main-color;
+  cursor: pointer;
+  color: $dark-color;
+  -webkit-transition: color 0.3s ease-in;
+  -o-transition: color 0.3s ease-in;
+  transition: color 0.3s ease-in;
+  font: 400 20px/40px Inter-Regular, sans-serif;
+  &:hover {
+    color: $light-color;
+  }
+}
