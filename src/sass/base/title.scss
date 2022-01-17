@@ -1,0 +1,47 @@
+.title-container {
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+  padding: 0 20px;
+  color: $main-color;
+  text-align: center;
+  overflow: hidden;
+  &:before, &:after {
+    top: 50%;
+    width: 50%;
+    left: 0;
+    content: '';
+    position: absolute;
+    height: 2px;
+    background-color: $main-color;
+  }
+  &:after {
+    left: auto;
+    right: 0;
+  }
+  @media screen and (max-width: 768px) {
+    max-width: 364px;
+  }
+}
+.section__title {
+  margin: 0 auto 60px;
+  @media screen and (max-width: 768px) {
+    margin-bottom: 50px;
+  }
+}
+.title {
+  position: relative;
+  font: bold 40px/80px Merriweather-Bold, serif;
+  text-align: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0 20px;
+  z-index: 2;
+  background-color: $dark-color;
+  margin: 0 auto;
+  @media screen and (max-width: 768px) {
+    font: bold 32px/40px Merriweather-Bold, serif;
+    padding: 20px;
+  }
+}
