@@ -1,0 +1,36 @@
+.about-container {
+  background: url(../assets/img/header-bg.jpg) no-repeat center -90px;
+  padding-bottom: 330px;
+  @media screen and (max-width: 768px) {
+    background: url(../assets/img/header-bg-adaptive.jpg) no-repeat 100% -90px;
+    padding: 78px 64px 152px 60px;
+  }
+}
+.about__hero {
+  margin: 60px 0 0 60px;
+  @media screen and (max-width: 768px) {
+    margin: 0;
+  }
+}
+.hero {
+  max-width: 470px;
+  color: $light-color;
+  font: 400 20px/40px Inter-Regular, sans-serif;
+  &__title {
+    font: bold 60px/120px "Merriweather-Bold";
+    @media screen and (max-width: 768px) {
+      font: 400 32px/64px "Merriweather-Regular";
+    }
+  }
+  &__description {
+    margin: 10px 0 25px;
+    @media screen and (max-width: 768px) {
+      margin: 20px 0 60px;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    max-width: 390px;
+    font: 400 20px/24px Inter-Regular, sans-serif;
+  }
+}
