@@ -49,6 +49,7 @@
     }
   }
   @media screen and (max-width: 768px) {
+    display: none;
     font: 400 35px/72px Inter-Regular, sans-serif;
     position: fixed;
     right: 0;
@@ -59,18 +60,19 @@
     background-color: $dark-color;
     z-index: 3;
     margin: 0;
+    transform: translate(100%);
     padding: 134px 0 0 127px;
-    -webkit-transition: transform 0.3s ease-in;
-         -o-transition: transform 0.3s ease-in;
-            transition: transform 0.3s ease-in;
-    -webkit-transform: translate(100%);
-        -ms-transform: translate(100%);
-            transform: translate(100%);
   }
   &_active {
-    -webkit-transform: translate(0);
-      -ms-transform: translate(0);
-          transform: translate(0);
+    display: block;
+    transform: translate(0);
+    -webkit-animation: navFromRight 0.3s ease-in;
+            animation: navFromRight 0.3s ease-in;
+  }
+  &_inactive {
+    display: block;
+    -webkit-animation: navToRight 0.3s ease-in;
+            animation: navToRight 0.3s ease-in;
   }
 }
 .langs {
@@ -135,9 +137,9 @@
     background-color: $light-color;
     position: relative;
     &:before, &:after {
-      -webkit-transition: background-color 0.3s ease-in;
-         -o-transition: background-color 0.3s ease-in;
-            transition: background-color 0.3s ease-in;
+      -webkit-transition: background-color 0.3s ease-in, transform 0.3s ease-in;
+         -o-transition: background-color 0.3s ease-in, transform 0.3s ease-in;
+            transition: background-color 0.3s ease-in, transform 0.3s ease-in;
       content: '';
       position: absolute;
       width: 50px;
@@ -148,10 +150,11 @@
     &:after {
       top: 12px;
     }
-    &_close {
+  }
+  &_active {
+    .burger-menu__item {
       position: fixed;
-      width: 45px;
-      height: 45px;
+      height: 0;
       top: 23px;
       right: 64px;
       background-color: transparent;
@@ -160,9 +163,9 @@
          -o-transition: background-color 0.3s ease-in;
             transition: background-color 0.3s ease-in;
       &:before, &:after {
-        -webkit-transition: background-color 0.3s ease-in;
-         -o-transition: background-color 0.3s ease-in;
-            transition: background-color 0.3s ease-in;
+        -webkit-transition: background-color 0.3s ease-in, transform 0.3s ease-in;
+         -o-transition: background-color 0.3s ease-in, transform 0.3s ease-in;
+            transition: background-color 0.3s ease-in, transform 0.3s ease-in;
         content: '';
         position: absolute;
         -webkit-transform: rotate(-45deg);
