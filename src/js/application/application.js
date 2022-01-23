@@ -4,9 +4,12 @@ export class Application {
     this.activateListeners();
   }
   toggleMenuClasses(burger, nav) {
-    burger.span.classList.toggle('burger-menu__item');
-    burger.span.classList.toggle('burger-menu__item_close');
+    burger.node.classList.toggle('burger-menu_active');
     nav.node.classList.toggle('navigation_active');
+    if (!nav.node.classList.contains('navigation_active'))
+      nav.node.classList.add('navigation_inactive');
+    else
+      nav.node.classList.remove('navigation_inactive');
     this.node.classList.toggle('body_overlay');
   }
   activateListeners() {
