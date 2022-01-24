@@ -52,7 +52,6 @@
 }
 .video-control {
   width: 100%;
-  display: none;
   position: absolute;
   bottom: 0;
   background-color: $dark-color;
@@ -72,8 +71,30 @@
     width: 100%;
     cursor: pointer;
     position: absolute;
+    height: 5px;
     left: 0;
     top: -5px;
+    -webkit-appearance: none;
+        -moz-appearance: none;
+          appearance: none;
+    background: linear-gradient(to right, $main-color 0%, $main-color 0%, $light-color 0%, $light-color 100%);
+    &::-webkit-slider-thumb {
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background-color: $main-color;
+      -webkit-appearance: none;
+          -moz-appearance: none;
+              appearance: none;
+      @media screen and (max-width: 1024px) {
+          width: 13px;
+          height: 13px;
+      }
+      @media screen and (max-width: 420px) {
+          width: 10px;
+          height: 10px;
+      }
+    }
   }
   &__settings {
     width: 34px;
@@ -102,12 +123,51 @@
   }
   &__volume-bar {
     width: 0;
+    height: 5px;
+    margin-left: 20px;
     cursor: pointer;
     -webkit-transition: width 0.3s;
     -o-transition: width 0.3s;
     transition: width 0.3s;
+    -webkit-appearance: none;
+      -moz-appearance: none;
+            appearance: none;
+    background: linear-gradient(to right, $main-color 0%, $main-color 50%, $light-color 0%, $light-color 100%);
     &:hover {
       width: 100px;
+    }
+    &::-webkit-slider-thumb {
+      display: none;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background-color: $main-color;
+      -webkit-appearance: none;
+              appearance: none;
+      @media screen and (max-width: 1024px) {
+          width: 13px;
+          height: 13px;
+      }
+      @media screen and (max-width: 420px) {
+          width: 10px;
+          height: 10px;
+      }
+    }
+  }
+  &__volume-container {
+    height: 34px;
+    display: flex;
+    align-items: center;
+    &:hover {
+      .video-control__volume {
+        opacity: 0.5;
+      }
+      .video-control__volume-bar {
+        width: 100px;
+        &::-webkit-slider-thumb {
+          display: block;
+        }
+      }
     }
   }
   &__volume {
@@ -118,15 +178,6 @@
     -o-transition: opacity 0.2s ease-out;
     transition: opacity 0.2s ease-out;
     background: url(../assets/svg/volume.svg) no-repeat;
-    &:hover {
-      opacity: 0.5;
-      .video-control__volume-bar {
-        width: 100px;
-      }
-    }
-    &:hover + .video-control__volume-bar {
-      width: 100px;
-    }
   }
   &_hide {
     -webkit-transform: translateY(-100%);
