@@ -5,6 +5,9 @@
     background: url(../assets/img/header-bg-adaptive.jpg) no-repeat 100% -90px;
     padding: 78px 64px 152px 60px;
   }
+  @media screen and (max-width: 420px) {
+    padding-bottom: 30px;
+  }
 }
 .about__hero {
   margin: 60px 0 0 60px;
