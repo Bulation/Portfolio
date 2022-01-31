@@ -99,11 +99,12 @@
           <h2 class="title video__title">Video</h2>
         </div>
         <div class="video-player-container">
-          <video class="video" src="assets/video.mp4" poster="assets/img/poster.jpg"></video>
+          <video preload="metadata" class="video" src="assets/video.mp4" poster="assets/img/poster.jpg"></video>
           <button class="video__btn" type="button"></button>
           <div class="video-control">
             <div class="video-control-container">
               <input class="video-control__bar" type="range" min="0" max="100" value="0" step="1" name="currentTime">
+              <div class="video-control__buffer-bar"></div>
               <button class="video-control__play" type="button"></button>
               <div class="video-control__volume-container">
                 <button class="video-control__volume" type="button"></button>
@@ -126,14 +127,14 @@
             <div class="video-control__time-speed-values">
               <button class="video-control__time-speed-values-exit" type="button">Time speed</button>
               <div class="video-control__time-speed-values-buttons">
-                <button class="video-control__time-speed-btn" type="button">0.25</button>
-                <button class="video-control__time-speed-btn" type="button">0.5</button>
-                <button class="video-control__time-speed-btn" type="button">0.75</button>
-                <button class="video-control__time-speed-btn video-control__time-speed-choosen" type="button">1</button>
-                <button class="video-control__time-speed-btn" type="button">1.25</button>
-                <button class="video-control__time-speed-btn" type="button">1.5</button>
-                <button class="video-control__time-speed-btn" type="button">1.75</button>
-                <button class="video-control__time-speed-btn" type="button">2</button>
+                <button class="video-control__time-speed-btn" data-value="0.25" type="button">0.25</button>
+                <button class="video-control__time-speed-btn" data-value="0.5" type="button">0.5</button>
+                <button class="video-control__time-speed-btn" data-value="0.75" type="button">0.75</button>
+                <button class="video-control__time-speed-btn video-control__time-speed-choosen" data-value="1" type="button">1</button>
+                <button class="video-control__time-speed-btn" data-value="1.25" type="button">1.25</button>
+                <button class="video-control__time-speed-btn" data-value="1.5" type="button">1.5</button>
+                <button class="video-control__time-speed-btn" data-value="1.75" type="button">1.75</button>
+                <button class="video-control__time-speed-btn" data-value="2" type="button">2</button>
               </div>
             </div>
           </div>
