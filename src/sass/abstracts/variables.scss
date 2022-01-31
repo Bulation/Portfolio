@@ -1,5 +1,9 @@
 .dark-theme {
+  --hero-bg: url(../assets/img/header-bg.jpg);
+  --hero-bg-adaptive: url(../assets/img/header-bg-adaptive.jpg);
+  --contacts-bg: url(../assets/img/contacts.jpg);
   --bg-color: #000000;
+  --form-bg-color: rgba(0, 0, 0, 0.5);
   --text-color: #FFFFFF;
   --title-color: #BDAE82;
   --form-color: #BDAE82;
@@ -19,7 +23,11 @@
   --video-color: #FFFFFF;
 }
 .light-theme {
+  --hero-bg: url(../assets/img/header-bg-light.jpg);
+  --hero-bg-adaptive: url(../assets/img/header-bg-adaptive-light.jpg);
+  --contacts-bg: url(../assets/img/contacts-light.jpg);
   --bg-color: #FFFFFF;
+  --form-bg-color: rgba(255, 255, 255, 0.5);
   --video-color: #FFFFFF;
   --text-color: #1C1C1C;
   --title-color: #1C1C1C;

@@ -3,11 +3,11 @@
   display: -ms-flexbox;
   display: flex;
   padding: 20px;
-  background: url(../assets/img/header-bg.jpg) no-repeat center 0;
+  background: var(--hero-bg) no-repeat center 0;
   font: 400 20px/50px Inter-Regular, sans-serif;
   @media screen and (max-width: 768px) {
     padding: 20px 64px 20px 60px;
-    background: url(../assets/img/header-bg-adaptive.jpg) no-repeat 100% 0;
+    background: var(--hero-bg-adaptive) no-repeat 100% 0;
   }
 }
 .header {
@@ -190,6 +190,55 @@
           background-color: var(--main-color);
         }
       }
+    }
+  }
+  @media screen and (max-width: 768px) {
+    order: 1;
+  }
+}
+
+.theme-changer {
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+  &__sun {
+    margin-left: 35px;
+    background-color: var(--text-color);
+    -webkit-mask: url(../assets/svg/sun.svg);
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+            mask: url(../assets/svg/sun.svg);
+            mask-repeat: no-repeat;
+            mask-position: center;
+    -webkit-transition: background-color 0.3s ease-in;
+         -o-transition: background-color 0.3s ease-in;
+            transition: background-color 0.3s ease-in;
+    @media screen and (max-width: 768px) {
+      margin-left: 0;
+      margin-right: 30px;
+    }
+    &:hover {
+      background-color: var(--main-color);
+    }
+  }
+  &__moon {
+    margin-left: 35px;
+    background-color: var(--text-color);
+    -webkit-mask: url(../assets/svg/moon.svg);
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+            mask: url(../assets/svg/moon.svg);
+            mask-repeat: no-repeat;
+            mask-position: center;
+    -webkit-transition: background-color 0.3s ease-in;
+         -o-transition: background-color 0.3s ease-in;
+            transition: background-color 0.3s ease-in;
+    @media screen and (max-width: 768px) {
+      margin-left: 0;
+      margin-right: 30px;
+    }
+    &:hover {
+      background-color: var(--main-color);
     }
   }
 }
