@@ -11,6 +11,6 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
-    'class-methods-use-this': ['error', { exceptMethods: ['getTime'] }],
+    'class-methods-use-this': ['error', { exceptMethods: ['getTime', 'createImg'] }],
   },
 };
