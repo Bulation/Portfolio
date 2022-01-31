@@ -1,9 +1,6 @@
 .video {
   width: 100%;
   height: 100%;
-  max-height: 705px;
-  -o-object-fit: cover;
-     object-fit: cover;
   &__btn {
     width: 130px;
     height: 130px;
@@ -14,15 +11,18 @@
     background-color: $light-color;
     -webkit-mask: url(../assets/svg/videoplay.svg);
             mask: url(../assets/svg/videoplay.svg);
-    &:hover {
-      background-color: $main-color;
-    }
     position: absolute;
     -webkit-transform: translate(-50%, -50%);
         -ms-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
     left: 50%;
     top: 50%;
+    &:hover {
+      background-color: $main-color;
+    }
+    &_hide {
+      display: none;
+    }
     @media screen and (max-width: 768px) {
       -webkit-mask: url(../assets/svg/videoadaptiveplay.svg);
       -webkit-mask-repeat: no-repeat;
@@ -30,6 +30,23 @@
               mask: url(../assets/svg/videoadaptiveplay.svg);
               mask-repeat: no-repeat;
               mask-position: center;
+    }
+  }
+  &__load {
+    width: 128px;
+    height: 128px;
+    position: absolute;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    background-color: transparent;
+    background-image: url(../assets/svg/load.gif);
+    background-size: cover;
+    @media screen and (max-width: 420px) {
+      width: 60px;
+      height: 60px;
     }
   }
 }
@@ -41,6 +58,7 @@
 }
 .video-player-container {
   position: relative;
+  overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -54,7 +72,10 @@
   width: 100%;
   position: absolute;
   bottom: 0;
-  background-color: $dark-color;
+  background-color: transparent;
+  -webkit-transition: transform 0.3s;
+    -o-transition: transform 0.3s;
+    transition: transform 0.3s;
   &__play {
     width: 23px;
     height: 30px;
@@ -66,6 +87,11 @@
     &:hover {
       opacity: 0.5;
     }
+    &_pause {
+      width: 36px;
+      height: 36px;
+      background: url(../assets/svg/pause.svg) no-repeat;
+    }
   }
   &__bar {
     width: 100%;
@@ -74,10 +100,11 @@
     height: 5px;
     left: 0;
     top: -5px;
+    z-index: 3;
     -webkit-appearance: none;
         -moz-appearance: none;
           appearance: none;
-    background: linear-gradient(to right, $main-color 0%, $main-color 0%, $light-color 0%, $light-color 100%);
+    background: linear-gradient(to right, $main-color 0%, $main-color 0%, $transparent-color 0%, $transparent-color 100%);
     &::-webkit-slider-thumb {
       width: 15px;
       height: 15px;
@@ -96,17 +123,36 @@
       }
     }
   }
+  &__buffer-bar {
+    width: 0;
+    cursor: pointer;
+    position: absolute;
+    height: 5px;
+    left: 0;
+    top: -5px;
+    background: #eee;
+  }
+  &__time {
+    display: flex;
+    gap: 10px;
+    @media screen and (max-width: 420px) {
+      gap: 5px;
+    }
+  }
   &__settings {
     width: 34px;
     height: 34px;
     cursor: pointer;
     margin-left: auto;
-    -webkit-transition: opacity 0.2s ease-out;
-    -o-transition: opacity 0.2s ease-out;
-    transition: opacity 0.2s ease-out;
+    -webkit-transition: opacity 0.2s ease-out, transform 0.2s ease-out;
+    -o-transition: opacity 0.2s ease-out, transform 0.2s ease-out;
+    transition: opacity 0.2s ease-out, transform 0.2s ease-out;
     background: url(../assets/svg/settings.svg) no-repeat;
     &:hover {
       opacity: 0.5;
+    }
+    &_active {
+      transform: rotate(30deg);
     }
   }
   &__fullscreen {
@@ -120,6 +166,10 @@
     &:hover {
       opacity: 0.5;
     }
+    &_exit {
+      height: 36px;
+      background: url(../assets/svg/fullscreen_exit.svg) no-repeat;
+    }
   }
   &__volume-bar {
     width: 0;
@@ -132,7 +182,7 @@
     -webkit-appearance: none;
       -moz-appearance: none;
             appearance: none;
-    background: linear-gradient(to right, $main-color 0%, $main-color 50%, $light-color 0%, $light-color 100%);
+    background: linear-gradient(to right, $main-color 0%, $main-color 50%, $transparent-color 0%, $transparent-color 100%);
     &:hover {
       width: 100px;
     }
@@ -159,13 +209,13 @@
     display: flex;
     align-items: center;
     &:hover {
-      .video-control__volume {
-        opacity: 0.5;
-      }
       .video-control__volume-bar {
         width: 100px;
         &::-webkit-slider-thumb {
           display: block;
+        }
+        @media screen and (max-width: 420px) {
+          width: 50px;
         }
       }
     }
@@ -178,14 +228,21 @@
     -o-transition: opacity 0.2s ease-out;
     transition: opacity 0.2s ease-out;
     background: url(../assets/svg/volume.svg) no-repeat;
+    &:hover {
+      opacity: 0.5;
+    }
+    &_mute {
+      background: url(../assets/svg/mute.svg) no-repeat;
+    }
   }
   &_hide {
-    -webkit-transform: translateY(-100%);
-        -ms-transform: translateY(-100%);
-            transform: translateY(-100%);
+    -webkit-transform: translateY(100%);
+        -ms-transform: translateY(100%);
+            transform: translateY(100%);
   }
   &__time-speed-popup {
     opacity: 0;
+    pointer-events: none;
     position: absolute;
     -webkit-transition: opacity 0.3s ease-in;
     -o-transition: opacity 0.3s ease-in;
@@ -194,8 +251,8 @@
     right: 10px;
     bottom: 100px;
     &_active {
-      display: block;
       opacity: 1;
+      pointer-events: auto;
     }
   }
   &__time-speed-description {
@@ -218,15 +275,17 @@
   }
   &__time-speed-value {
     position: absolute;
-    width: 20px;
+    width: 50px;
     height: 30px;
+    padding-right: 20px;
+    text-align: right;
     right: 20px;
     cursor: pointer;
     &:before, &:after {
       content: "";
       position: absolute;
       width: 2px;
-      left: 25px;
+      right: 0;
       top: 10px;
       height: 10px;
       background-color: #ffffff;
@@ -244,6 +303,7 @@
   &__time-speed-values {
     position: absolute;
     opacity: 0;
+    pointer-events: none;
     right: 10px;
     bottom: 100px;
     width: 300px;
@@ -253,6 +313,7 @@
     background-color: $dark-color;
     &_active {
       opacity: 1;
+      pointer-events: auto;
     }
   }
   &__time-speed-values-buttons {
@@ -328,6 +389,20 @@
       height: 20px;
     }
   }
+  &__speed {
+    width: 100px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 1s;
+    background-color: $dark-color;
+    color: $light-color;
+    text-align: center;
+    &_animate {
+      transform: scale(1);
+    }
+  }
 }
 .video-control-container {
   display: -webkit-box;
@@ -340,4 +415,9 @@
   margin: 0 auto;
   padding: 20px 0;
   gap: 20px;
+  @media screen and (max-width: 420px) {
+    width: calc(100% - 10px);
+    gap: 10px;
+    padding: 5px 0;
+  }
 }
