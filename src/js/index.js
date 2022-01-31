@@ -1,4 +1,4 @@
-import { Application } from "./application/application";
+import Application from './application/application';
 
 const app = new Application(document.body);
-app.activateBodyListeners();
+app.activateListeners();
