@@ -40,9 +40,6 @@ export default class Video {
   }
 
   defineTime() {
-    if (Number.isNaN(this.video.duration) || Number.isNaN(this.video.currentTime)) {
-      this.defineTime();
-    }
     this.setState('videoDuration', this.video.duration);
     this.setState('videoTime', this.video.currentTime);
     this.initTime();
