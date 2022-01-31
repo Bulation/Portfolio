@@ -1,5 +1,5 @@
 .footer {
-  background-color: $dark-color;
+  background-color: var(--bg-color);
   &__copyrights {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -51,12 +51,12 @@
     width: 32px;
     height: 32px;
     cursor: pointer;
-    background-color: $light-color;
+    background-color: var(--text-color);
     -webkit-transition: background-color 0.3s ease-in;
          -o-transition: background-color 0.3s ease-in;
             transition: background-color 0.3s ease-in;
     &:hover {
-      background-color: $main-color;
+      background-color: var(--main-color);
     }
   }
 }

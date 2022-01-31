@@ -1,4 +1,39 @@
-$dark-color: #000;
-$light-color: #fff;
-$main-color: #BDAE82;
-$transparent-color: #EEEEEE33;
+.dark-theme {
+  --bg-color: #000000;
+  --text-color: #FFFFFF;
+  --title-color: #BDAE82;
+  --form-color: #BDAE82;
+  --light-color: #FFFFFF;
+  --dark-color: #000000;
+  --btn-light-bg: #BDAE82;
+  --hover-color: #FFFFFF;
+  --bg-hover-color: #BDAE82;
+  --btn-light-hover-bg: #BDAE82;
+  --main-color: #BDAE82;
+  --transparent-color: #EEEEEE33;
+  --buffer-color: #EEEEEE;
+  --price-color: #BDAE82;
+  --portfolio-btn-color: #BDAE82;
+  --portfolio-btn-bg-color: #000000;
+  --time-speed-color: #52555E;
+  --video-color: #FFFFFF;
+}
+.light-theme {
+  --bg-color: #FFFFFF;
+  --video-color: #FFFFFF;
+  --text-color: #1C1C1C;
+  --title-color: #1C1C1C;
+  --form-color: #1C1C1C;
+  --light-color: #FFFFFF;
+  --dark-color: #000000;
+  --btn-light-bg: #FFFFFF;
+  --hover-color: #BDAE82;
+  --bg-hover-color: #1C1C1C;
+  --main-color: #BDAE82;
+  --transparent-color: #EEEEEE33;
+  --buffer-color: #EEEEEE;
+  --price-color: #1C1C1C;
+  --portfolio-btn-color: #1C1C1C;
+  --portfolio-btn-bg-color: #BDAE82;
+  --time-speed-color: #52555E;
+}

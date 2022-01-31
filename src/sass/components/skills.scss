@@ -55,7 +55,7 @@
 
 @each $logo in camera, audio, picture, video {
   .#{$logo}-logo {
-    background-color: $main-color;
+    background-color: var(--main-color);
     -webkit-mask: url(../assets/svg/#{$logo}.svg);
     -webkit-mask-repeat: no-repeat;
     -webkit-mask-position: center;

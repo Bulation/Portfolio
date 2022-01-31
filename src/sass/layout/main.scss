@@ -2,7 +2,7 @@
   max-width: 1440px;
   margin: 0 auto;
   padding: 100px 20px 0;
-  color: $light-color;
+  color: var(--text-color);
   -webkit-transition: background-color 0.3s ease-in;
        -o-transition: background-color 0.3s ease-in;
           transition: background-color 0.3s ease-in;
@@ -14,7 +14,7 @@
   }
 }
 .main {
-  background-color: $dark-color;
+  background-color: var(--bg-color);
 }
 .body_overlay {
   &:before {

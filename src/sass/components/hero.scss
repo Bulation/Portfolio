@@ -17,13 +17,16 @@
 }
 .hero {
   max-width: 470px;
-  color: $light-color;
+  color: var(--text-color);
   font: 400 20px/40px Inter-Regular, sans-serif;
   &__title {
     font: bold 60px/120px "Merriweather-Bold";
     @media screen and (max-width: 768px) {
       font: 400 32px/64px "Merriweather-Regular";
     }
+  }
+  &__btn {
+    background-color: var(--btn-light-bg);
   }
   &__description {
     margin: 10px 0 25px;

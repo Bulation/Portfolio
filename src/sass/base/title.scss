@@ -3,7 +3,7 @@
   width: 100%;
   max-width: 700px;
   padding: 0 20px;
-  color: $main-color;
+  color: var(--title-color);
   text-align: center;
   overflow: hidden;
   &:before, &:after {
@@ -13,7 +13,7 @@
     content: '';
     position: absolute;
     height: 2px;
-    background-color: $main-color;
+    background-color: var(--title-color);
   }
   &:after {
     left: auto;
@@ -38,7 +38,7 @@
   width: fit-content;
   padding: 0 20px;
   z-index: 2;
-  background-color: $dark-color;
+  background-color: var(--bg-color);
   margin: 0 auto;
   @media screen and (max-width: 768px) {
     font: bold 32px/40px Merriweather-Bold, serif;

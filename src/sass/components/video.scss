@@ -8,7 +8,7 @@
     -webkit-transition: background-color 0.3s ease-in;
     -o-transition: background-color 0.3s ease-in;
     transition: background-color 0.3s ease-in;
-    background-color: $light-color;
+    background-color: var(--light-color);
     -webkit-mask: url(../assets/svg/videoplay.svg);
             mask: url(../assets/svg/videoplay.svg);
     position: absolute;
@@ -18,7 +18,7 @@
     left: 50%;
     top: 50%;
     &:hover {
-      background-color: $main-color;
+      background-color: var(--main-color);
     }
     &_hide {
       display: none;
@@ -59,6 +59,7 @@
 .video-player-container {
   position: relative;
   overflow: hidden;
+  color: var(--video-color);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -104,12 +105,12 @@
     -webkit-appearance: none;
         -moz-appearance: none;
           appearance: none;
-    background: linear-gradient(to right, $main-color 0%, $main-color 0%, $transparent-color 0%, $transparent-color 100%);
+    background: linear-gradient(to right, var(--main-color) 0%, var(--main-color) 0%, var(--transparent-color) 0%, var(--transparent-color) 100%);
     &::-webkit-slider-thumb {
       width: 15px;
       height: 15px;
       border-radius: 50%;
-      background-color: $main-color;
+      background-color: var(--main-color);
       -webkit-appearance: none;
           -moz-appearance: none;
               appearance: none;
@@ -130,7 +131,7 @@
     height: 5px;
     left: 0;
     top: -5px;
-    background: #eee;
+    background: var(--buffer-color);
   }
   &__time {
     display: flex;
@@ -182,7 +183,7 @@
     -webkit-appearance: none;
       -moz-appearance: none;
             appearance: none;
-    background: linear-gradient(to right, $main-color 0%, $main-color 50%, $transparent-color 0%, $transparent-color 100%);
+    background: linear-gradient(to right, var(--main-color) 0%, var(--main-color) 50%, var(--transparent-color) 0%, var(--transparent-color) 100%);
     &:hover {
       width: 100px;
     }
@@ -191,7 +192,7 @@
       width: 15px;
       height: 15px;
       border-radius: 50%;
-      background-color: $main-color;
+      background-color: var(--main-color);
       -webkit-appearance: none;
               appearance: none;
       @media screen and (max-width: 1024px) {
@@ -247,7 +248,7 @@
     -webkit-transition: opacity 0.3s ease-in;
     -o-transition: opacity 0.3s ease-in;
     transition: opacity 0.3s ease-in;
-    background-color: $dark-color;
+    background-color: var(--bg-color);
     right: 10px;
     bottom: 100px;
     &_active {
@@ -270,7 +271,7 @@
     transition: background-color 0.3s ease-in;
     padding: 0 10px;
     &:hover {
-      background-color: #52555e;
+      background-color: var(--time-speed-color);
     }
   }
   &__time-speed-value {
@@ -288,7 +289,7 @@
       right: 0;
       top: 10px;
       height: 10px;
-      background-color: #ffffff;
+      background-color: var(--text-color);
       -webkit-transform: rotate(135deg);
           -ms-transform: rotate(135deg);
               transform: rotate(135deg);
@@ -310,7 +311,7 @@
     -webkit-transition: opacity 0.3s ease-in;
     -o-transition: opacity 0.3s ease-in;
     transition: opacity 0.3s ease-in;
-    background-color: $dark-color;
+    background-color: var(--bg-color);
     &_active {
       opacity: 1;
       pointer-events: auto;
@@ -324,29 +325,29 @@
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    border-top: 1px solid $light-color;
+    border-top: 1px solid var(--dark-color);
   }
   &__time-speed-btn {
     border: none;
     position: relative;
     padding: 10px 0;
-    color: $light-color;
+    color: var(--text-color);
     cursor: pointer;
-    background-color: $dark-color;
+    background-color: var(--bg-color);
     font: 400 18px/18px Inter-Regular, sans-serif;
     -webkit-transition: background-color 0.3s ease-in;
     -o-transition: background-color 0.3s ease-in;
     transition: background-color 0.3s ease-in;
     &:hover {
-      background-color: #52555e;
+      background-color: var(--time-speed-color);
     }
   }
   &__time-speed-values-exit {
     border: none;
     padding: 10px 0 10px 40px;
-    color: $light-color;
+    color: var(--text-color);
     cursor: pointer;
-    background-color: $dark-color;
+    background-color: var(--bg-color);
     font: 400 18px/36px Inter-Regular, sans-serif;
     &:before, &:after {
       content: "";
@@ -355,7 +356,7 @@
       top: 15px;
       left: 15px;
       height: 15px;
-      background-color: #ffffff;
+      background-color: var(--text-color);;
       -webkit-transform: rotate(45deg);
           -ms-transform: rotate(45deg);
               transform: rotate(45deg);
@@ -371,7 +372,7 @@
     &:before, &:after {
       content: "";
       position: absolute;
-      background-color: #fff;
+      background-color: var(--text-color);;
       left: 16px;
       top: 22px;
       -webkit-transform: translate(-50%, -50%) rotate(-55deg);
@@ -396,8 +397,8 @@
     top: 50%;
     transform: translate(-50%, -50%) scale(0);
     transition: transform 1s;
-    background-color: $dark-color;
-    color: $light-color;
+    background-color: var(--bg-color);;
+    color: var(--text-color);;
     text-align: center;
     &_animate {
       transform: scale(1);

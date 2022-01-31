@@ -13,14 +13,14 @@
           justify-content: center;
   gap: 5px;
   &__season-btn {
-    color: $main-color;
-    background-color: $dark-color;
-    border: 2px solid $main-color;
+    color: var(--portfolio-btn-color);
+    background-color: var(--portfolio-btn-bg-color);
+    border: 2px solid var(--main-color);
     padding: 5px 0;
     &_active {
-      color: $dark-color;
+      color: var(--portfolio-btn-bg-color);
       border: none;
-      background-color: $main-color;
+      background-color: var(--portfolio-btn-color);
       padding: 7px 0;
     }
   }
