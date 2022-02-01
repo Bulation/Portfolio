@@ -145,5 +145,11 @@ export default class Application {
       this.themeChanger.changeTheme();
       this.themeChanger.changeIcon();
     };
+    this.translator.en.oninput = () => {
+      this.translator.translate(this.translator.en.value);
+    };
+    this.translator.ru.oninput = () => {
+      this.translator.translate(this.translator.ru.value);
+    };
   }
 }

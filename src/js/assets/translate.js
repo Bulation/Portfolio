@@ -2,6 +2,8 @@ export default class Translator {
   constructor(nodes, langsContainer) {
     this.textNodes = nodes;
     this.langsContainer = langsContainer;
+    this.en = this.langsContainer.querySelector('.langs__en');
+    this.ru = this.langsContainer.querySelector('.langs__ru');
     this.i18Obj = {
       en: {
         skills: 'Skills',
@@ -84,5 +86,12 @@ export default class Translator {
         'send-message': 'Отправить',
       },
     };
+  }
+
+  translate(lang) {
+    this.textNodes.forEach((node) => {
+      /* eslint-disable-next-line */
+      node.textContent = this.i18Obj[lang][node.dataset.i18n];
+    });
   }
 }
