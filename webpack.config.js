@@ -5,11 +5,11 @@ const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 const isProduction = process.env.NODE_ENV === 'production';
 module.exports = {
-  mode: 'development',
+  mode: isProduction ? 'production' : 'development',
   entry: {
     main: ['./src/js/index.js', './src/sass/style.scss', './src/index.html'],
   },
-  devtool: 'source-map',
+  devtool: !isProduction ? 'source-map' : false,
   output: {
     path: path.join(__dirname, '/dist'),
     filename: 'bundle.[contenthash].js',
@@ -32,7 +32,6 @@ module.exports = {
   optimization: {
     // eslint-disable-next-line quotes
     minimizer: [`...`, new CssMinimizerPlugin()],
-    minimize: false,
   },
   module: {
     rules: [
