@@ -19,7 +19,7 @@ export default class Application {
   activateListeners() {
     this.node.onclick = (e) => {
       if (!e.target.closest('.navigation, .burger-menu') && this.menu.burger.classList.contains('burger-menu_active')) {
-        this.menu.toggleMenuClasses();
+        this.node.classList.toggle('body_overlay');
       }
       if (!e.target.closest('.video-control__settings, .video-control__time-speed-values, .video-control__time-speed-popup, video-control__time-speed-values-exit') && this.videoPlayer.settings.classList.contains('video-control__time-speed-popup_active')) {
         this.videoPlayer.settings.classList.toggle('video-control__time-speed-popup_active');
@@ -33,7 +33,7 @@ export default class Application {
       this.menu.toggleMenuClasses();
     };
     this.menu.nav.onclick = (e) => {
-      if (e.target.classList.contains('navigation__link')) {
+      if (e.target.classList.contains('navigation__link') && this.menu.burger.classList.contains('burger-menu_active')) {
         this.menu.toggleMenuClasses();
       }
     };
